@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/autho-header.ejs')%>
+    <form action="/api/signup" method="POST" class="login">
+        <h1>Регистрация</h1>
+        <fieldset class="fieldset">
+        <input type="text" placeholder="Введите email" id="email" name="email">
+        </fieldset>
+        <fieldset class="fieldset">
+        <input type="text" placeholder="Введите полное имя" id="full_name" name="full_name">
+        </fieldset>
+        <fieldset class="fieldset">
+        <input type="password" placeholder="Введите пароль" id="password" name="password">
+        </fieldset>
+        <fieldset class="fieldset">
+        <input type="password" placeholder="Подтвердите пароль" id="re_password" name="re_password">
+        </fieldset>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <%- include('partials/scripts.ejs')%>
+</body>

@@ -1,0 +1,59 @@
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.date svg,
+.views svg,
+.comments svg,
+.category svg,
+.author svg {
+    margin-right: 5px; 
+}
+
+.date p,
+.views p,
+.comments p,
+.category p,
+.author p {
+    margin: 0;
+}
+.comments-author{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.comments-author img{
+    border-radius: 50%;
+}
+.comments-author{
+    font-size: 28px;
+    font-family: Roboto-Regular;
+}
+.comments-text p{
+    font-family: Roboto-Regular;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+.my-comment textarea{
+    width: 700px;
+    padding: 20px;
+    font-size: 16px;
+    font-family: Roboto-Medium;
+    border: 1px solid #E7E7E7;
+    outline: none;
+    margin-bottom: 30px;
+}
+.my-comment button{
+    background-color: #00A2DC;
+    width: 100px;
+    font-family: Roboto-Medium;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/autho-header.ejs')%>
+    <div class="content">
+        <form action="/api/blogs/new" method="POST" enctype="multipart/form-data">
+        <div class="new-blog">
+            <h1>Новый блог</h1>
+                <fieldset class="fieldset">
+                    <input type="text" placeholder="Введите заголовок блога" name="title">
+                </fieldset>
+        </div>
+        <fieldset class="arrow-category">
+            <select name="category">
+                <option value="" disabled selected>Выберите категорию</option>
+                <%
+                    categories.forEach(category => {
+                    %>
+                    <option value="<%=category._id%>"><%= category.name%></option>
+                    <%
+                    })
+                %>
+            </select>
+        </fieldset>
+        <fieldset class="choose-img">
+            <label for="blogimage" class="choose-img-label">Выберите картинку</label>
+            <input type="file" id="blogimage" name="image" class="choose-img-input">
+        </fieldset>
+        
+        <div class="blog-description">
+            <input type="text" placeholder="Введите описание блога" name="blogDescription">
+        </div>
+        <div class="create-blog">
+            <button type="submit">Создать</button>
+        </div>
+    </form>
+    </div>
+    <%- include('partials/scripts.ejs')%>
+</body>

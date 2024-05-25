@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/autho-header.ejs')%>
+    <form action="api/signin" method="POST" class="login">
+        <h1>Вход</h1>
+        <fieldset class="fieldset">
+        <input type="text" placeholder="Введите email" id="email" name="email">
+        </fieldset>
+        <fieldset class="fieldset">
+        <input type="password" placeholder="Введите пароль" name="password">
+        </fieldset>
+        <button type="submit">Войти</button>
+        <p>Войти с помощью: </p>
+        <a href="/api/auth/github"> <img src="/images/GitHub_Invertocat_Logo.svg.png" alt=""> Github</a>
+    </form>
+    <%- include('partials/scripts.ejs')%>
+</body>

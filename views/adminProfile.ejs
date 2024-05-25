@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/autho-header.ejs')%>
+    <div class="content">
+        <div class="my-blogs">
+            <h2>Мои блоги</h2>
+            <a href="/newblog">Новый блог</a>
+        </div>
+        <div>
+            <%
+            blogs.forEach(item => {
+            %>
+        <div class="article" style="position: relative;">
+            <img src="<%= item.image%>" alt="">
+            <a href="" class="icon" style="position: relative;">Еще</a>
+            <div class="icon-container" style="position: relative;">
+                <svg class="icon" width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z" fill="black" fill-opacity="0.54"/>
+                </svg> 
+                <div class="modal-window" style="position: absolute;">
+                    <a style="background-color: gainsboro; color: black;" href="/edit/<%= item._id%>">Редактировать</a>
+                    <a style="background-color: red;" onclick="deleteBlogs('<%= item._id%>', '<%= item.author._id%>')">Удалить</a>
+                </div>
+            </div>
+            <h3><%= item.title%></h3>
+            <p><%= item.blogDescription%></p>
+        </div>
+        <div class="icons">
+        <div class="date">
+            <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 1.81255V4.16384H8V1.81255H6V4.16384H5C3.89 4.16384 3.01 5.22192 3.01 6.51513L3 22.9742C3 24.2674 3.89 25.3255 5 25.3255H19C20.1 25.3255 21 24.2674 21 22.9742V6.51513C21 5.22192 20.1 4.16384 19 4.16384H18V1.81255H16ZM19 22.9742H5V10.0421H19V22.9742Z" fill="black" fill-opacity="0.54"/>
+            </svg>
+            <p>26.06.2020</p>         
+        </div>
+        <div class="views">
+            <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5.92731C7 5.92731 2.73 9.58357 1 14.7447C2.73 19.9057 7 23.562 12 23.562C17 23.562 21.27 19.9057 23 14.7447C21.27 9.58357 17 5.92731 12 5.92731ZM12 20.6229C9.24 20.6229 7 17.9894 7 14.7447C7 11.4999 9.24 8.86642 12 8.86642C14.76 8.86642 17 11.4999 17 14.7447C17 17.9894 14.76 20.6229 12 20.6229ZM12 11.2177C10.34 11.2177 9 12.7931 9 14.7447C9 16.6962 10.34 18.2716 12 18.2716C13.66 18.2716 15 16.6962 15 14.7447C15 12.7931 13.66 11.2177 12 11.2177Z" fill="black" fill-opacity="0.54"/>
+            </svg>
+            <p>21</p>
+        </div>
+        <div class="comments">
+            <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M20 3.1638H4C2.9 3.1638 2 4.22188 2 5.51509V26.6767L6 21.9741H20C21.1 21.9741 22 20.9161 22 19.6228V5.51509C22 4.22188 21.1 3.1638 20 3.1638Z" fill="black"/>
+            </svg>
+            <p>4</p>
+        </div>
+        <div class="category">
+            <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M21.001 7.59191H19V18.1727H5.99902V20.524C5.99902 21.173 6.44902 21.6997 7.00002 21.6997H17.999L22 26.4023V8.76756C22 8.11743 21.552 7.59191 21.001 7.59191ZM16.001 2.88818H3C2.448 2.88818 2 3.41487 2 4.06501V20.5241L5.999 15.8215H16.001C16.552 15.8215 17 15.2948 17 14.6446V4.06501C17 3.41487 16.552 2.88818 16.001 2.88818Z" fill="black"/>
+            </svg>
+            <p><%= item.category.name%></p>
+        </div>
+        <div class="author">
+            <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14.7447C14.21 14.7447 16 12.6403 16 10.0421C16 7.4439 14.21 5.33949 12 5.33949C9.79 5.33949 8 7.4439 8 10.0421C8 12.6403 9.79 14.7447 12 14.7447ZM12 17.096C9.33 17.096 4 18.6713 4 21.7985V24.1498H20V21.7985C20 18.6713 14.67 17.096 12 17.096Z" fill="black" fill-opacity="0.54"/>
+            </svg>
+            <p><%= item.author.email%></p>
+        </div>
+        </div>
+        <%
+        })
+        %>
+    </div>
+    </div>
+
+
+    <div class="blog">
+        <img src="/images/avatar.png" alt="">
+        <h1><%=user.email%></h1>
+        <%
+            if(loginUser.id == user.id){
+
+        %>
+            <a href="/api/signout">Выйти</a>
+        <%
+            }
+        %>
+    </div>
+    <%- include('partials/scripts.ejs')%>
+</body>
+</html>

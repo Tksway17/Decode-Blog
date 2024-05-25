@@ -1,0 +1,22 @@
+@import url('vendor/reset.css');
+@import url('components/header.css');
+@import url('components/content.css');
+@import url('components/blog.css');
+@import url('components/comments.css');
+@import url('components/noauthorization.css');
+@import url('components/newblog.css');
+@import url('components/login.css');
+@import url('components/register.css');
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('../fonts/Roboto-Bold.ttf');
+}

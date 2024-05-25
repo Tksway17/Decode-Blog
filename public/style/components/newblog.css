@@ -1,0 +1,79 @@
+.new-blog h1{
+    font-size: 36px;
+    font-family: Roboto-Medium;
+    margin-bottom: 30px;
+}
+.new-blog input{
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #E7E7E7;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+.new-blog input::placeholder{
+    color: #000000;
+}
+
+.arrow-category select{
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #E7E7E7;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.choose-img {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.choose-img-input {
+    display: none; 
+}
+
+.choose-img-label {
+    display: inline-block;
+    background-color: #FFF72F;
+    font-family: Roboto-Medium;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.choose-img-input[type="file"]:focus + .choose-img-label {
+    outline: 1px dotted #000000; /* Добавить контур при фокусе на элементе input */
+}
+
+.blog-description input{
+    width: 600px;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #E7E7E7;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+.create-blog button{
+    background-color:#00A2DC;
+    font-family: Roboto-Medium;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    border: none;
+}
